@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package main;
+
+service ShippingService {
+    rpc GetShippingProvider(Request) returns (Response);
+}
+
+message Request {
+
+}
+
+message Response {
+    repeated Shipping shippings = 1;
+}
+
+message Shipping {
+    int32 shippingID = 1;
+    string name = 2;
+    string unit = 3;
+    int32 pricePerUnit = 4;
+}
